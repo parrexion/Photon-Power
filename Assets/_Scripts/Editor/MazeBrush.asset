@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5751a2c961df945a34295ccf5e576d, type: 3}
+  m_Name: MazeBrush
+  m_EditorClassIdentifier: 
+  wallNorth: 0
+  wallWest: 0
+  wallEast: 0
+  wallSouth: 0
+  isStart: 0
+  isGoal: 0
+  groupIndex: 0
+  faceDirection: 0
+  tilePrefab: {fileID: 1356639499184872, guid: f18b74c8671eaeb4fac538db528ee1ac, type: 2}
+  wallPrefab: {fileID: 1573627032059950, guid: 20c917bc42907ce4c840ad8b6258990c, type: 2}
+  zPos: 0
