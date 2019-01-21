@@ -18,9 +18,11 @@ public class GameSetup : MonoBehaviour {
 		}
 		DontDestroyOnLoad(gameObject);
 	}
-#endregion
+	#endregion
 
-	public Transform[] spawnPoints;
+	public int nextPlayersTeam = 1;
+	public Transform[] spawnPointsTeam1;
+	public Transform[] spawnPointsTeam2;
 
 
 	public void DisconnectPlayer() {
@@ -33,5 +35,9 @@ public class GameSetup : MonoBehaviour {
 			yield return null;
 
 		SceneManager.LoadScene(MultiplayerSettings.instance.menuScene);
+	}
+
+	public void UpdateTeam() {
+		nextPlayersTeam = (nextPlayersTeam == 1) ? 2 : 1;
 	}
 }

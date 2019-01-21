@@ -84,7 +84,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114009635604749598}
   viewIdField: 0
-  InstantiationId: 0
+  InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!50 &50758843088986204
 Rigidbody2D:

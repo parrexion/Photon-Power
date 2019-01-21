@@ -34,6 +34,7 @@ public class MazeCreator : MonoBehaviour {
 					MazeTileData data = tile.ExtractData(pos, tilemapWalls);
 					Debug.Log("Mask:  " + data.mask);
 					Transform floor = Instantiate(floorPrefab, new Vector3(0.5f + x, 0.5f + y, 0), Quaternion.identity, mazeContainer.transform);
+					floor.name = "Floor " + x + "," + y;
 				}
 			}	
 		}

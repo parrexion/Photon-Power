@@ -10,6 +10,7 @@ public class AvatarCombat : MonoBehaviour {
 	private PhotonView pv;
 	private AvatarSetup avatarSetup;
 	public Text healthDisplay;
+	public int playerID;
 
 
 	private void Start () {
@@ -31,6 +32,10 @@ public class AvatarCombat : MonoBehaviour {
 			Debug.Log("Pew2!");
 			pv.RPC("RPC_TakeDamage", RpcTarget.All, 2, avatarSetup.playerDamage);
 		}
+		else if (Input.GetKeyDown(KeyCode.Alpha3)) {
+			Debug.Log("Score!");
+			pv.RPC("RPC_AddScore", RpcTarget.All, pv.OwnerActorNr);
+		}
 	}
 
 	[PunRPC]
@@ -43,5 +48,10 @@ public class AvatarCombat : MonoBehaviour {
 		else {
 			Debug.Log("Didn't hit player " + pv.OwnerActorNr);
 		}
+	}
+
+	[PunRPC]
+	public void RPC_AddScore(int playerIndex) {
+		ScoreController.instance.AddScore(playerIndex);
 	}
 }
