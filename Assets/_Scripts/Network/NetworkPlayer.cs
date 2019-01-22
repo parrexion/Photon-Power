@@ -16,7 +16,7 @@ public class NetworkPlayer : MonoBehaviour {
 			return;
 
 		pv.RPC("RPC_GetTeam", RpcTarget.MasterClient);
-		pv.RPC("RPC_CreatePlayerScore", RpcTarget.All, pv.OwnerActorNr, "NAME");
+		pv.RPC("RPC_SetPlayerScore", RpcTarget.All, pv.OwnerActorNr, "NAME");
 	}
 
 	[PunRPC] //Only master
@@ -24,7 +24,6 @@ public class NetworkPlayer : MonoBehaviour {
 		myTeam = GameSetup.instance.nextPlayersTeam;
 		GameSetup.instance.UpdateTeam();
 		pv.RPC("RPC_SendTeam", RpcTarget.AllBuffered, myTeam);
-		pv.RPC("RPC_CreatePlayerScore", RpcTarget.)
 	}
 
 	[PunRPC]
@@ -49,7 +48,7 @@ public class NetworkPlayer : MonoBehaviour {
 	}
 
 	[PunRPC]
-	public void RPC_CreatePlayerScore(int index, string nameIn) {
-		ScoreController.instance.CreatePlayerScore(index, nameIn);
+	public void RPC_SetPlayerScore(int index, string nameIn) {
+		ScoreController.instance.SetPlayerScore(index, nameIn);
 	}
 }

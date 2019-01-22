@@ -21,8 +21,12 @@ public class ScoreController : MonoBehaviour {
 	public List<ScoreEntry> scoreList = new List<ScoreEntry>();
 
 	
-	public void CreatePlayerScore(int index, string nameIn) {
+	public void SetPlayerScore(int index, string nameIn) {
 		Debug.Log("Create Score    " + index);
+		if (scoreList.Find(x => x.playerIndex == index) != null) {
+			Debug.Log("Already have player index: " + index);
+			return;
+		}
 		Transform score = Instantiate(scorePrefab, transform);
 		score.GetComponent<ScoreEntry>().SetPlayer(index, nameIn, 0);
 		scoreList.Add(score.GetComponent<ScoreEntry>());

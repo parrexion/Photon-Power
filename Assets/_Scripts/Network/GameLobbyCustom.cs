@@ -33,6 +33,7 @@ public class GameLobbyCustom : MonoBehaviourPunCallbacks, ILobbyCallbacks {
 	public override void OnConnectedToMaster() {
 		Debug.Log("Connected to server");
 		PhotonNetwork.AutomaticallySyncScene = true;
+		PhotonNetwork.NickName = "Player " + Random.Range(0, 1000);
 	}
 
 	public override void OnRoomListUpdate(List<RoomInfo> roomList) {

@@ -41,4 +41,5 @@ MonoBehaviour:
   - CreatePlayer
   - RPC_AddScore
   - RPC_CreatePlayerScore
+  - RPC_SetPlayerScore
   DisableAutoOpenWizard: 1
