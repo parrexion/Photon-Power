@@ -24,6 +24,7 @@ public class NetworkPlayer : MonoBehaviour {
 		myTeam = GameSetup.instance.nextPlayersTeam;
 		GameSetup.instance.UpdateTeam();
 		pv.RPC("RPC_SendTeam", RpcTarget.AllBuffered, myTeam);
+		pv.RPC("RPC_CreatePlayerScore", RpcTarget.)
 	}
 
 	[PunRPC]
