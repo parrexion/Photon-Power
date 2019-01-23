@@ -29,7 +29,8 @@ public class GameLobbyCustom : MonoBehaviourPunCallbacks, ILobbyCallbacks {
 
 
 	private void Start () {
-		PhotonNetwork.ConnectUsingSettings();
+		if (!PhotonNetwork.IsConnected)
+			PhotonNetwork.ConnectUsingSettings();
 		roomList = new List<RoomInfo>();
 	}
 

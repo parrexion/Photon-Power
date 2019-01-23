@@ -17,7 +17,7 @@ public class GameRoomCustom : MonoBehaviourPunCallbacks, IInRoomCallbacks {
 			instance = this;
 		}
 		else if (instance != this) {
-			Destroy(instance.gameObject);
+			PhotonNetwork.Destroy(instance.gameObject);
 			instance = this;
 		}
 		DontDestroyOnLoad(gameObject);
@@ -26,7 +26,7 @@ public class GameRoomCustom : MonoBehaviourPunCallbacks, IInRoomCallbacks {
 
 	public Text playerNumberText;
 
-	private PhotonView pv;
+	public PhotonView pv;
 	public bool isGameLoaded;
 	public int currentScene;
  
@@ -52,7 +52,6 @@ public class GameRoomCustom : MonoBehaviourPunCallbacks, IInRoomCallbacks {
 
 
 	private void Start() {
-		pv = GetComponent<PhotonView>();
 		readyToCount = false;
 		readyToStart = false;
 		lessThanMaxPlayers = startingTime;

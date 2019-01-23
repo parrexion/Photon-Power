@@ -17,7 +17,7 @@ public class GameRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks {
 			instance = this;
 		}
 		else if (instance != this) {
-			GameObject.Destroy(instance.gameObject);
+			PhotonNetwork.Destroy(instance.gameObject);
 			instance = this;
 		}
 		DontDestroyOnLoad(gameObject);

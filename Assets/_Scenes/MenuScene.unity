@@ -1144,6 +1144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumberText: {fileID: 2012640095}
+  pv: {fileID: 692147069}
   isGameLoaded: 0
   currentScene: 0
   playersInRoom: 0
@@ -1262,8 +1263,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 1
-  InstantiationId: 1
+  viewIdField: 998
+  InstantiationId: 998
   isRuntimeInstantiated: 0
 --- !u!1 &765608254
 GameObject:

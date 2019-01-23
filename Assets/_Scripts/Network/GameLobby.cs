@@ -11,7 +11,7 @@ public class GameLobby : MonoBehaviourPunCallbacks {
 	public static GameLobby instance;
 	private void Awake() {
 		if (instance != null) {
-			GameObject.Destroy(gameObject);
+			Destroy(gameObject);
 		}
 		else {
 			instance = this;
