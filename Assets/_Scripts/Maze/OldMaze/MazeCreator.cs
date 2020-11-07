@@ -31,7 +31,7 @@ public class MazeCreator : MonoBehaviour {
 				if (tilemapWalls.HasTile(pos)) {
 					Debug.Log("Found a tile at x:  " + x + "  ,  y:  " + y);
 					MazeTile tile = (MazeTile)tilemapWalls.GetTile(pos);
-					MazeTileData data = tile.ExtractData(pos, tilemapWalls);
+					MazeTileData data = tile.ExtractData();
 					Debug.Log("Mask:  " + data.mask);
 					Transform floor = Instantiate(floorPrefab, new Vector3(0.5f + x, 0.5f + y, 0), Quaternion.identity, mazeContainer.transform);
 					floor.name = "Floor " + x + "," + y;
@@ -85,6 +85,6 @@ public class MazeCreator : MonoBehaviour {
 			MapTile tile = mazeContainer.spawnTiles[i];
 			gameController.Spawn(i, tile);
 		}
-		gameController.StartGame();
+		gameController.BeginGame();
 	}
 }

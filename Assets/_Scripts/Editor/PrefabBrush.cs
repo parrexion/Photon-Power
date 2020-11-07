@@ -125,7 +125,7 @@ namespace UnityEditor
 	}
 
 	[CustomEditor(typeof(PrefabBrush))]
-	public class PrefabBrushEditor : GridBrushEditorBase
+	public class PrefabBrushEditor : UnityEditor.Tilemaps.GridBrushEditorBase
 	{
 		private PrefabBrush prefabBrush { get { return target as PrefabBrush; } }
 

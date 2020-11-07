@@ -3,15 +3,16 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a722a812575681e43951c1dc6e332b66, type: 3}
   m_Name: Maze3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 01f93d9574886554c93f502308067a09, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 655bc0989629c3242a19414c6d38f6a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -33,22 +34,6 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  wallSprites:
-  - {fileID: 21300000, guid: 01f93d9574886554c93f502308067a09, type: 3}
-  - {fileID: 21300000, guid: b5ef7fa8d9a2a68479c35cb3c8138887, type: 3}
-  - {fileID: 21300000, guid: 75cb569791d07ae4b92860e540a67bcd, type: 3}
-  - {fileID: 21300000, guid: 655bc0989629c3242a19414c6d38f6a3, type: 3}
-  - {fileID: 21300000, guid: 89c48e333c6fcf44c89006dc547f61ad, type: 3}
-  - {fileID: 21300000, guid: 111bc545f9411cd49861a8bc7c1b7315, type: 3}
-  - {fileID: 21300000, guid: 601fe353afdde9341bf6fddb42f2c35e, type: 3}
-  - {fileID: 21300000, guid: d2be9c165dfa8654ba690872d0d3fa75, type: 3}
-  - {fileID: 21300000, guid: 993a5a5f546b8194aae1fa049f85e3c6, type: 3}
-  - {fileID: 21300000, guid: aee9a816441657640a4e4a6ddccefc22, type: 3}
-  - {fileID: 21300000, guid: 16ac78dc7b0cbfb44bcee0b8eb66a908, type: 3}
-  - {fileID: 21300000, guid: 60b70d75d572ec548af8337a24d09080, type: 3}
-  - {fileID: 21300000, guid: b36ae511c6e890242b00abc6a11830cd, type: 3}
-  - {fileID: 21300000, guid: 229b1f838aac67643a3ee6408dd944b6, type: 3}
-  - {fileID: 21300000, guid: 76c5624b62ea3554baabb75949b67c83, type: 3}
   wallNorth: 0
   wallWest: 0
   wallEast: 0

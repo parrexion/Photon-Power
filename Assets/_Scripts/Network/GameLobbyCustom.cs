@@ -25,13 +25,13 @@ public class GameLobbyCustom : MonoBehaviourPunCallbacks, ILobbyCallbacks {
 	public GameObject roomListingPrefab;
 	public Transform roomsPanel;
 
-	public List<RoomInfo> roomList;
+	public List<RoomInfo> entryList;
 
 
 	private void Start () {
 		if (!PhotonNetwork.IsConnected)
 			PhotonNetwork.ConnectUsingSettings();
-		roomList = new List<RoomInfo>();
+		entryList = new List<RoomInfo>();
 	}
 
 	public override void OnConnectedToMaster() {
@@ -45,19 +45,19 @@ public class GameLobbyCustom : MonoBehaviourPunCallbacks, ILobbyCallbacks {
 		int tempIndex;
 
 		foreach(RoomInfo room in roomList) {
-			if (roomList != null) {
-				tempIndex = roomList.FindIndex(r => r.Name == room.Name);
+			if (entryList != null) {
+				tempIndex = entryList.FindIndex(r => r.Name == room.Name);
 			}
 			else {
 				tempIndex = -1;
 			}
 
 			if (tempIndex != -1) {
-				roomList.RemoveAt(tempIndex);
+				entryList.RemoveAt(tempIndex);
 				Destroy(roomsPanel.GetChild(tempIndex).gameObject);
 			}
 			else {
-				roomList.Add(room);
+				entryList.Add(room);
 				ListRoom(room);
 			}
 		}

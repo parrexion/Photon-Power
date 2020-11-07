@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: 3b7813fe-2863-4270-b7eb-fa7b01144722
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 0
+    AppVersion: 
     UseNameServer: 1
     FixedRegion: 
     Server: 
@@ -29,17 +29,12 @@ MonoBehaviour:
   EnableSupportLogger: 0
   RunInBackground: 1
   RpcList:
-  - DestroySpaceship
-  - Fire
-  - RespawnSpaceship
-  - RPC_CreatePlayer
-  - RPC_LoadedGameScene
   - RPC_AddCharacter
-  - RPC_TakeDamage
-  - RPC_GetTeam
-  - RPC_SendTeam
-  - CreatePlayer
   - RPC_AddScore
-  - RPC_CreatePlayerScore
+  - RPC_CreatePlayer
+  - RPC_GetTeam
+  - RPC_LoadedGameScene
+  - RPC_SendTeam
   - RPC_SetPlayerScore
+  - RPC_TakeDamage
   DisableAutoOpenWizard: 1

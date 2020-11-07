@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -19,6 +20,6 @@ MonoBehaviour:
   isGoal: 0
   groupIndex: 0
   faceDirection: 0
-  tilePrefab: {fileID: 1356639499184872, guid: f18b74c8671eaeb4fac538db528ee1ac, type: 2}
-  wallPrefab: {fileID: 1573627032059950, guid: 20c917bc42907ce4c840ad8b6258990c, type: 2}
+  tilePrefab: {fileID: 1356639499184872, guid: 48fae2015420e37439aa7335aaa5ef24, type: 3}
+  wallPrefab: {fileID: 1573627032059950, guid: 20c917bc42907ce4c840ad8b6258990c, type: 3}
   zPos: 0

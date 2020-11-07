@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public enum Direction { UP, LEFT, RIGHT, DOWN }
 public enum SpriteTiles { BASIC, START, GOAL }
 
 public class MapTile : MonoBehaviour {

@@ -26,24 +26,24 @@ public class Character : MonoBehaviour {
 			next.isVisible = true;
 			switch (dir)
 			{
-				case Direction.UP:
+				case Direction.NORTH:
 					next = mazeContainer.GetTile(next.posx, next.posy+1);
 					if (next == null) continue;
 					if (currentTile.blockNorth || next.blockSouth)
 						next = null;
 					break;
-				case Direction.LEFT:
+				case Direction.WEST:
 					next = mazeContainer.GetTile(next.posx-1, next.posy);
 					if (next == null) continue;
 					if (currentTile.blockWest || next.blockEast)
 						next = null;
 					break;
-				case Direction.RIGHT:
+				case Direction.EAST:
 					next = mazeContainer.GetTile(next.posx+1, next.posy);
 					if (next == null || currentTile.blockEast || next.blockWest)
 						next = null;
 					break;
-				case Direction.DOWN:
+				case Direction.SOUTH:
 					next = mazeContainer.GetTile(next.posx, next.posy-1);
 					if (next == null || currentTile.blockSouth || next.blockNorth)
 						next = null;
