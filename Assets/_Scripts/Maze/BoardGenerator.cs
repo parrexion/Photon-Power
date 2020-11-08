@@ -98,4 +98,20 @@ public class BoardGenerator : MonoBehaviour {
 	public bool ContainsCoordinates(Vector2Int coordinate) {
 		return coordinate.x >= 0 && coordinate.x < size.x && coordinate.y >= 0 && coordinate.y < size.y;
 	}
+
+	public void ClearVision() {
+		for (int y = 0; y < size.y; y++) {
+			for (int x = 0; x < size.x; x++) {
+				spaces[x, y].isVisible = false;
+			}
+		}
+	}
+
+	public void RefreshVision() {
+		for (int y = 0; y < size.y; y++) {
+			for (int x = 0; x < size.x; x++) {
+				spaces[x, y].RefreshVisibility();
+			}
+		}
+	}
 }

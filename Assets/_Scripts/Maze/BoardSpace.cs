@@ -13,6 +13,10 @@ public class BoardSpace : MonoBehaviour {
 	private int initializedEdgeCount;
 	private BoardSpaceEdge[] edges = new BoardSpaceEdge[DirectionUtil.Count];
 
+	[Header("Data")]
+	public List<GameObject> objects = new List<GameObject>();
+	public bool isVisible;
+
 
 	public BoardSpaceEdge GetEdge(Direction direction) {
 		return edges[(int)direction];
@@ -42,5 +46,20 @@ public class BoardSpace : MonoBehaviour {
 			}
 		}
 		throw new System.InvalidOperationException("Board space has no uninitialized directions left");
+	}
+
+	public void RefreshVisibility() {
+		gameObject.SetActive(isVisible);
+		for (int i = 0; i < objects.Count; i++) {
+			objects[i].SetActive(isVisible);
+		}
+	}
+
+	public void AddToSpace(GameObject obj) {
+		objects.Add(obj);
+	}
+
+	public void LeaveSpace(GameObject obj) {
+		objects.Remove(obj);
 	}
 }
