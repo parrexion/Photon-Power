@@ -60,6 +60,10 @@ public class ActionMenu : MonoBehaviour {
 		gameController.CurrentCharacter.SetStepsLeft(1);
 	}
 
+	public void ActionThrow() {
+		gameController.CurrentCharacter.ShowArrows();
+	}
+
 	public void ActionEndTurn() {
 		endTurnButton.gameObject.SetActive(false);
 		int nextPlayer = gameController.GetNextPlayer();

@@ -21,6 +21,9 @@ public class Character : MonoBehaviour {
 	public bool hasDashed;
 	public bool reachedGoal;
 
+	[Header("UI")]
+	public SpriteButton[] arrows;
+
 	public Vector2Int Coordinates => currentTile.coordinates;
 
 
@@ -29,6 +32,12 @@ public class Character : MonoBehaviour {
 		this.playerNumber = playerNumber;
 		GetComponent<SpriteRenderer>().sprite = spriteData.GetCharacterSprite(playerNumber);
 		MoveToTile(tile);
+
+		HideArrows();
+		for (int i = 0; i < arrows.Length; i++) {
+			int index = i;
+			arrows[i].Setup(() => ThrowStone((Direction)index));
+		}
 		Debug.Log($"Spawn a player at:  {tile.coordinates.x} , {tile.coordinates.y}");
 	}
 
@@ -76,5 +85,30 @@ public class Character : MonoBehaviour {
 		currentTile = tile;
 		currentTile.AddToSpace(gameObject);
 		transform.position = currentTile.transform.position;
+	}
+
+	public void ShowArrows() {
+		for (Direction dir = Direction.NORTH; dir <= Direction.WEST; dir++) {
+			BoardSpaceEdge edge = currentTile.GetEdge(dir);
+			arrows[(int)dir].gameObject.SetActive(!edge.blocked);
+		}
+	}
+
+	public void HideArrows() {
+		for (Direction dir = Direction.NORTH; dir <= Direction.WEST; dir++) {
+			arrows[(int)dir].gameObject.SetActive(false);
+		}
+	}
+
+	public void ThrowStone(Direction dir) {
+		HideArrows();
+		BoardSpace space = currentTile;
+		BoardSpaceEdge edge = currentTile.GetEdge(dir);
+		while (!edge.blocked) {
+			space = edge.otherSpace;
+			edge = space.GetEdge(dir);
+		}
+		space.isVisible = true;
+		space.RefreshVisibility();
 	}
 }
